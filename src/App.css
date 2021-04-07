@@ -1,0 +1,40 @@
+.App {
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+input {
+  height: 30px;
+  width: 300px;
+  padding: 5px;
+}
+
+button {
+  margin-top: 20px;
+  cursor: pointer;
+}
+.Todo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 30px;
+  border: 1px solid black;
+  border-top: none;
+  padding: 5px;
+  cursor: pointer;
+}
+.TodoList {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin: 0 auto;
+  height: 200px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+.DeleteTodo {
+  color: red;
+  font-weight: 900;
+}
