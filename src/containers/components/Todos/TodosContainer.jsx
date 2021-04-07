@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
-
+import Todo from './Todo';
 import { actions } from "../../store/actions";
 import InputField from "../InputField/InputField";
 
 
-const TodoContainer = props => {
+const TodosContainer = props => {
     const [isInput, toggleFieldStatus] = useState(false)
     const dispatch = useDispatch()
 
@@ -36,7 +36,7 @@ const TodoContainer = props => {
                 // </Formik>
                 <InputField toggleField={toggleField} {...props} />
                 :
-                <div onClick={toggleField}> {props.text} </div>
+                <Todo toggleField={toggleField} {...props} />
             }
 
             <div className='DeleteTodo' onClick={deleteTodo}> X </div>
@@ -44,4 +44,4 @@ const TodoContainer = props => {
     );
 };
 
-export default TodoContainer
+export default TodosContainer

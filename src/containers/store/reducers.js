@@ -17,7 +17,6 @@ export default (state = initialState, action) => {
             const newTodos = [...state.todos];
             newTodos[todoIdx] = action.payload;
             return { ...state, loading: false, todos: newTodos, selectedTodo: null };
-
         case actionTypes.REMOVE_TODO.SUCCESS:
             return { ...state, loading: false, todos: [...state.todos].filter(t => t.id !== action.payload) };
 

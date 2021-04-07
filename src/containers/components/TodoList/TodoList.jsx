@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import TodoContainer from "../Todo/TodoContainer";
+import TodoContainer from "../Todos/TodosContainer";
 import store from '../../store';
 
 const TodoList = () => {
   const todos = useSelector(store.selectors.getAllTodos());
 
-  console.log('todos', todos)
+  // console.log('todos', todos)
 
   return (
     <div className='TodoList'>
@@ -18,8 +18,3 @@ const TodoList = () => {
 };
 
 export default TodoList
-
-
-
-// return state.map(todo =>
-//         todo.id === action.id ? { ...todo, completed: !todo.completed } : todo
