@@ -32,14 +32,14 @@ export default props => {
 
     >
       {({ handleChange, values, setFieldValue }) => {
-        return <Form className="Form">
+        return <Form >
           <Field type="text"
             name="text"
             placeholder={FORM_HELP_TEXT.placeholder.text}
           />
 
           <Field type="date"
-            name="date"
+            name="todo_completed_date"
             placeholder={FORM_HELP_TEXT.placeholder.todo_completed_date}
           />
 
