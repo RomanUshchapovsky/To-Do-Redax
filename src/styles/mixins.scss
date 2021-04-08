@@ -1,0 +1,18 @@
+@import './variables.scss';
+
+
+@mixin font($style, $weight, $size, $line-height) {
+    font-family: $font-family;
+    font-style: $style;
+    font-weight: $weight;
+    font-size: $size;
+    line-height: $line-height;
+}
+@mixin centered-block ($display, $flex-direction, $position, $top ,$align-items, $justify-content) {  
+    display: $display;
+    flex-direction: $flex-direction;
+    position: $position;
+    top: $top; 
+    align-items: $align-items;
+    justify-content: $justify-content;
+}

@@ -12,6 +12,7 @@ export const FORM = {
   initialValues: {
       text: "",
       todo_completed_date: new Date(),
-      image_url: undefined
+      image_url: undefined,
+      file: undefined
   }
 }

@@ -1,0 +1,11 @@
+@import "../../../styles/index";
+
+
+.todoList {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  height: 100%;
+  width: 65%;
+  background-color: rgb(212, 238, 234);  
+}

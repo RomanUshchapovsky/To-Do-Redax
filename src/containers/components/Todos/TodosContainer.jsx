@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import classnames from 'classnames';
 
+import classes from "./Todos.module.scss"
 import Todo from './Todo';
 import { actions } from "../../store/actions";
 import InputField from "../InputField/InputField";
@@ -19,27 +21,14 @@ const TodosContainer = props => {
         }))
     };
     return (
-        <div className='Todo'>
+        <div className={classnames(classes.todoList)}>
             { isInput ?
-                // <Formik
-                //     {...FORM}
-                //     initialValues={
-                //         { text }
-                //     }
-                //     onSubmit={handleSubmit}
-                // >
-                //     {() => {
-                //         return <Form>
-                //             <Field type="text" name="text" />
-                //         </Form>
-                //     }}
-                // </Formik>
                 <InputField toggleField={toggleField} {...props} />
                 :
                 <Todo toggleField={toggleField} {...props} />
             }
 
-            <div className='DeleteTodo' onClick={deleteTodo}> X </div>
+            <div className={classnames(classes.deleteTodo)} onClick={deleteTodo}> X </div>
         </div >
     );
 };
