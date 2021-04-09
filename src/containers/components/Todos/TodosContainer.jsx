@@ -11,7 +11,7 @@ import InputField from "../InputField/InputField";
 const TodosContainer = props => {
     const [isInput, toggleFieldStatus] = useState(false)
     const dispatch = useDispatch()
-
+    
     const toggleField = () => {
         toggleFieldStatus(isInput => !isInput)
     }
@@ -20,6 +20,12 @@ const TodosContainer = props => {
         dispatch(actions.REMOVE_TODO.REQUEST(props.id, () => {
         }))
     };
+    const editTodo = () => {
+        dispatch(actions.UPDATE_TODO.REQUEST({ ...props }, () => {
+            toggleField();
+        }))
+    }
+
     return (
         <div className={classnames(classes.todoList)}>
             { isInput ?
@@ -27,9 +33,9 @@ const TodosContainer = props => {
                 :
                 <Todo toggleField={toggleField} {...props} />
             }
-
+            <div className={classnames(classes.editTodo)} onClick={editTodo}> Edit </div>
             <div className={classnames(classes.deleteTodo)} onClick={deleteTodo}> X </div>
-        </div >
+        </div>
     );
 };
 

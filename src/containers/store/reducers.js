@@ -7,9 +7,10 @@ export default (state = initialState, action) => {
         case actionTypes.FETCH_TODO.REQUEST:
         case actionTypes.CREATE_TODO.REQUEST:
         case actionTypes.UPDATE_TODO.REQUEST:
+            return { ...state, loading: true, error: null };
         case actionTypes.REMOVE_TODO.REQUEST:
             return { ...state, loading: true, error: null };
-
+            
         case actionTypes.CREATE_TODO.SUCCESS:
             return { ...state, loading: false, todos: [...state.todos].concat(action.payload) }
         case actionTypes.UPDATE_TODO.SUCCESS:

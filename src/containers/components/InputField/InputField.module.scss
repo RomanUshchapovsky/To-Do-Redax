@@ -1,19 +1,10 @@
 @import "../../../styles/index.scss";
 
-.addToDoButton {
-    display: block;
-    position: fixed;
-    top: 110px;
-    left: 10px;
-    right: 600px;
-    height: 30px;
-    width: 110px;
-    background-color: rgb(0, 247, 255);
-    border: none;
-    cursor: pointer;
-}
 .formBlock {
     @include centered-block(flex, column, relative, 10px, center, center);
+    background-color: white;
+    min-height: 300px;
+    min-width: 600px;
 }
 .formItem {
     height: 40px;

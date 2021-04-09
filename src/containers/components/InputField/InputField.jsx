@@ -10,7 +10,7 @@ import { FORM } from '../../constants/formHelper';
 import { FORM_HELP_TEXT } from '../../constants/messages';
 
 
-export default props => {
+export default (props, setActive) => {
   const dispatch = useDispatch()
   const handleSubmit = async (data, { resetForm }) => {
     if (props && props.id) {
@@ -33,17 +33,11 @@ export default props => {
     <Formik
       onSubmit={handleSubmit}
       {...setFormikInitialState()}
-
     >
       {({ handleChange, values, setFieldValue }) => {
+
         return <div>
-          <div>
-            <button className={classnames(classes.addToDoButton)}>Add new to do</button>
-
-          {/* call modal window */}
-          </div>
           <Form className={classnames(classes.formBlock)}>
-
 
             <Field className={classnames(classes.formItem)}
               type="text"
