@@ -3,14 +3,18 @@ import { useDispatch } from "react-redux";
 import classnames from 'classnames';
 import { Formik, Form, Field } from 'formik';
 import moment from 'moment';
+import { Button, Box } from "@material-ui/core";
 
-import classes from "./InputField.module.scss";
+import useStyles from "./styles";
+import styles from "./InputField.module.scss";
 import { actions } from "../../store/actions";
 import { FORM } from '../../constants/formHelper';
 import { FORM_HELP_TEXT } from '../../constants/messages';
 
 
 export default (props, setActive) => {
+  const classes = useStyles(); 
+
   const dispatch = useDispatch()
   const handleSubmit = async (data, { resetForm }) => {
     if (props && props.id) {
@@ -20,10 +24,11 @@ export default (props, setActive) => {
         toggleField();
       }))
     } else {
-      dispatch(actions.CREATE_TODO.REQUEST({ ...data, todo_completed_date: moment(new Date(data.todo_completed_date)).format("MM/DD/YYYY"), id: new Date().getTime() }, () => resetForm()))
+      dispatch(actions.CREATE_TODO.REQUEST({ ...data, 
+        todo_completed_date: moment(new Date(data.todo_completed_date)).format("MM/DD/YYYY"), 
+        id: new Date().getTime() }, () => resetForm()))
     }
   };
-
   const setFormikInitialState = () => {
     console.log(props && props.id ? { ...FORM, initialValues: { ...props } } : { ...FORM })
     return props && props.id ? { ...FORM, initialValues: { ...props } } : { ...FORM }
@@ -37,21 +42,21 @@ export default (props, setActive) => {
       {({ handleChange, values, setFieldValue }) => {
 
         return <div>
-          <Form className={classnames(classes.formBlock)}>
+          <Form className={classnames(styles.formBlock)}>
 
-            <Field className={classnames(classes.formItem)}
+            <Field className={classnames(styles.formItem)}
               type="text"
               name="text"
               placeholder={FORM_HELP_TEXT.placeholder.text}
             />
 
-            <Field className={classnames(classes.formItem)}
+            <Field className={classnames(styles.formItem)}
               type="date"
               name="todo_completed_date"
               placeholder={FORM_HELP_TEXT.placeholder.todo_completed_date}
             />
 
-            {/* <Field className={classnames(classes.formItem)}
+            {/* <Field className={classnames(styles.formItem)}
             type="file"
             name="file"
             placeholder={FORM_HELP_TEXT.placeholder.image_url}
@@ -73,8 +78,9 @@ export default (props, setActive) => {
             }}
           /> */}
             <div>
-              <button className={classnames(classes.formButton)} type="submit" >Save</button>
-              <button className={classnames(classes.formButton)} type="reset" >Сlear Form</button>
+              <Box>Dropdown</Box>
+              <Button variant="contained" className={classes.formButton} type="submit" >Save</Button >
+              <Button variant="contained" className={classes.formButton} type="reset" >Сlear Form</Button >
             </div>
           </Form>
         </div>

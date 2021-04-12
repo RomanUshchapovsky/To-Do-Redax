@@ -1,13 +1,6 @@
-import axios from 'axios';
 
-export class Api {
-    constructor() {
-        // TODO
-    }
+const fetchToDoFromApi = () => fetch('https://jsonplaceholder.typicode.com/todos?_limit=2')
+  .then(response => response.json())
+  .then(json => console.log(json))
 
-    get(url, headers, params) {
-        return axios.get(url, headers, params)
-    }
-
-    // TODO
-}
+export default fetchToDoFromApi

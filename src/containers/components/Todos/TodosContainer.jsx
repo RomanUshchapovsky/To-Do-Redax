@@ -1,21 +1,22 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import classnames from 'classnames';
+import { Button, Container, Grid } from "@material-ui/core";
 
-import classes from "./Todos.module.scss"
+
+import useStyles from "./styles";
 import Todo from './Todo';
 import { actions } from "../../store/actions";
 import InputField from "../InputField/InputField";
 
 
 const TodosContainer = props => {
+    const classes = useStyles();
     const [isInput, toggleFieldStatus] = useState(false)
     const dispatch = useDispatch()
-    
+
     const toggleField = () => {
         toggleFieldStatus(isInput => !isInput)
     }
-
     const deleteTodo = () => {
         dispatch(actions.REMOVE_TODO.REQUEST(props.id, () => {
         }))
@@ -27,15 +28,27 @@ const TodosContainer = props => {
     }
 
     return (
-        <div className={classnames(classes.todoList)}>
+        <Grid className={classes.todoList}>
             { isInput ?
                 <InputField toggleField={toggleField} {...props} />
                 :
                 <Todo toggleField={toggleField} {...props} />
             }
-            <div className={classnames(classes.editTodo)} onClick={editTodo}> Edit </div>
-            <div className={classnames(classes.deleteTodo)} onClick={deleteTodo}> X </div>
-        </div>
+            <Container>
+                <Button
+                    variant="contained"
+                    className={classes.editTodo}
+                    onClick={editTodo}>
+                    Edit
+                </Button>
+                <Button
+                    variant="contained"
+                    className={classes.deleteTodo}
+                    onClick={deleteTodo}>
+                    X
+                </Button>
+            </Container>
+        </Grid>
     );
 };
 

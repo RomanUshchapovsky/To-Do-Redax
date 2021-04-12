@@ -1,22 +1,23 @@
 import React from 'react'
-import classnames from 'classnames';
+import { Container } from "@material-ui/core";
 
-import classes from "./Todos.module.scss"
+
+import useStyles from "./styles";
 
 export default ({ toggleField, text, todo_completed_date, image_url }) => {
-    return (
-        <div className={classnames(classes.todosListBlock)} onClick={toggleField}>
+    const classes = useStyles();
 
-            <div className={classnames(classes.todosListItem1)}>
+    return (
+        <Container className={classes.todosListBlock}>
+            <div className={classes.todosListImg}>
                 <img src={image_url} alt="Todo image" />
             </div>
-            <div className={classnames(classes.todosListItem2)}>
+            <div className={classes.todosListText}>
                 <p>{text}</p>
             </div>
-            <div className={classnames(classes.todosListItem3)}>
+            <div className={classes.todosListDate}>
                 <p>{todo_completed_date}</p>
             </div>
-        </div>
+        </Container>
     )
 }
-

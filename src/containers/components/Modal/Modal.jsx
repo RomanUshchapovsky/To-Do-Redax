@@ -1,13 +1,15 @@
 import React, { useRef } from "react";
 import ReactDOM from "react-dom";
 import classnames from 'classnames';
+import { Button } from "@material-ui/core";
 
-import classes from "./Modal.module.scss";
+import useStyles from "./styles";
+import styles from "./Modal.module.scss";
 import useOutsideClick from "../../../shared/useOutsideClick/useOutsideClick";
 
 
 const Modal = ({ active, setActive, children }) => {
-
+    const classes = useStyles();
     const ref = useRef();
 
     useOutsideClick(ref, () => {
@@ -16,9 +18,9 @@ const Modal = ({ active, setActive, children }) => {
 
     return active ? ReactDOM.createPortal(
 
-        <div className={classnames(classes.modal, { active })} >
+        <div className={classnames(styles.modal, { active })} >
             <div>
-                <button className={classnames(classes.closeButton)} onClick={() => setActive(false)}>X</button>
+                <Button className={classes.closeButton} onClick={() => setActive(false)}>X</Button>
             </div>
             <div ref={ref} >
                 {children}
