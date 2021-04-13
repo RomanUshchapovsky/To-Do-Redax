@@ -11,10 +11,10 @@ import useOutsideClick from "../../../shared/useOutsideClick/useOutsideClick";
 const Modal = ({ active, setActive, children }) => {
     const classes = useStyles();
     const ref = useRef();
-
-    useOutsideClick(ref, () => {
-        if (active) setActive(false);
-    });
+    
+    // useOutsideClick(ref, () => {
+    //     if (active) setActive(false);
+    // });
 
     return active ? ReactDOM.createPortal(
 

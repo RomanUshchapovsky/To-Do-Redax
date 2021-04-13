@@ -6,7 +6,6 @@ export default (state = initialState, action) => {
         case actionTypes.FETCH_TODOS.REQUEST:
         case actionTypes.FETCH_TODO.REQUEST:
         case actionTypes.CREATE_TODO.REQUEST:
-
         case actionTypes.UPDATE_TODO.REQUEST:
             return { ...state, loading: true, error: null };
         case actionTypes.REMOVE_TODO.REQUEST:

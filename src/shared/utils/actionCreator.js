@@ -18,7 +18,6 @@ export const createActions = types => {
 
   return actionConstants;
 };
-
 // ----------------
 export const createActionConstants = types => {
   const actionConstants = {};
@@ -33,5 +32,3 @@ export const createActionConstants = types => {
 
   return actionConstants;
 };
-
-// actionTypes.FETCH_TODO.REQUEST({ payload, callback, opt })

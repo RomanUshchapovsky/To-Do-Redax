@@ -10,7 +10,7 @@ export default ({ toggleField, text, todo_completed_date, image_url }) => {
     return (
         <Container className={classes.todosListBlock}>
             <div className={classes.todosListImg}>
-                <img src={image_url} alt="Todo image" />
+                <img src={image_url} alt="Todo" />
             </div>
             <div className={classes.todosListText}>
                 <p>{text}</p>
