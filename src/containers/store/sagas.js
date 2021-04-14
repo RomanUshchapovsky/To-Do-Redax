@@ -32,6 +32,7 @@ function* updateTodo({ payload, callback }) {
   }
 }
 
+
 export default function* todosWatcher() {
   yield takeLatest(actionTypes.CREATE_TODO.REQUEST, addNewTodo);
   yield takeLatest(actionTypes.REMOVE_TODO.REQUEST, removeTodo);

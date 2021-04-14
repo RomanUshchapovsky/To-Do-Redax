@@ -1,44 +1,66 @@
-// import React from "react";
-import { ROUTES_PATH } from "./constants";
+import React from 'react';
+import { ROUTES_PATH, ROUTES_LABEL } from './constants';
 
-export const privateRouter = [
-  {
-    path: "/",
-    exact: true,
-    component: null,
-    children: [],
-  },
-];
+import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
+import ListAltIcon from '@material-ui/icons/ListAlt';
+
+import Main from '../containers/components/Main/Main';
+import Activation from '../containers/components/Auth/components/Activation/Activation';
+import SignIn from '../containers/components/Auth/components/SignIn/SignIn';
+import SignUp from '../containers/components/Auth/components/SignUp/SignUp';
+import ResetPassword from '../containers/components/Auth/components/ResetPassord/ResetPassword';
+import ForgotPassword from '../containers/components/Auth/components//ForgotPassword/ForgotPassword';
+
+
+export const privateRouter = () =>
+  [
+    {
+      path: ROUTES_PATH.TODO,
+      exact: true,
+      component: Main,
+      children: [],
+      label: ROUTES_LABEL.TODO,
+      icon: <ListAltIcon />,
+    },
+    {
+      path: ROUTES_PATH.CALENDAR,
+      exact: true,
+      component: () => <div>CALENDAR</div>,
+      children: [],
+      label: ROUTES_LABEL.CALENDAR, 
+      icon: <CalendarTodayIcon />,
+    },
+  ]
 
 export const publicRouter = [
   {
-    path: SIGN_IN,
+    path: ROUTES_PATH.SIGN_IN,
     exact: true,
-    component: null,
+    component: SignIn,
     children: [],
   },
   {
-    path: SIGN_UP,
+    path: ROUTES_PATH.SIGN_UP,
     exact: true,
-    component: null,
+    component: SignUp,
     children: [],
   },
   {
-    path: RESET,
+    path: `${ROUTES_PATH.RESET}/:token`,
     exact: true,
-    component: null,
+    component: ResetPassword,
     children: [],
   },
   {
-    path: FORGOT,
+    path: ROUTES_PATH.FORGOT,
     exact: true,
-    component: null,
+    component: ForgotPassword,
     children: [],
   },
   {
-    path: ACTIVATION,
+    path: `${ROUTES_PATH.ACTIVATION}/:token`,
     exact: true,
-    component: null,
+    component: Activation,
     children: [],
   },
 ];

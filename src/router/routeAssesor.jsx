@@ -8,7 +8,7 @@ const routeAssessor = (parentRoutePath, route) => {
 
   if (!children.length) {
     return (
-      <Route
+      <Route 
         key={fullPath}
         path={fullPath}
         exact={exact}
