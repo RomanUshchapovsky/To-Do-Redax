@@ -1,27 +1,25 @@
 import React, { useContext } from "react";
 import { Container } from "@material-ui/core";
-
+import {useSelector} from 'react-redux'
 import useStyles from "./styles";
 import { Context } from "../../../Context/ContextContainer";
 
 const ResultField = (data) => {
     const { users } = useContext(Context);
     const classes = useStyles();
-    // const {todos} = useSelector(state=>state.todosReducer)
+    const todosList = useSelector(state=>state.todosReducer.todos)
     // const data = todos.reduce((acc, val)=>acc[val.userId]?{...acc}:{...acc, [val.userId]:val.name}, {})
-    const assigned = Object.keys(users)
+    const filtered = users.filter(user=>todosList.some(todo=>todo.user.id===user.id))
     return (
         <Container className={classes.resultBlock} >
             <div className={classes.allToDo}>
-                All To Do: {users.length}
+                All To Do: {todosList.length}
             </div>
             <div className={classes.unassignedUsers}>
-                {/* Unassigned Users: {users.length-assigned.length} // filter => !user */}
-                Unassigned Users: {users.length-assigned.length}
+                Unassigned Users: {users.length-filtered.length}
             </div>
             <div className={classes.assignedUsers}>
-                {/* Assigned Users: {assigned.length} // -> user */}
-                Assigned Users: {assigned.length}
+                Assigned Users: {filtered.length}
             </div>
         </Container>
     )

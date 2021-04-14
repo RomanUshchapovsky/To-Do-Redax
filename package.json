@@ -30,6 +30,7 @@
     "yup": "^0.32.9"
   },
   "devDependencies": {
+    "pre-commit": "^1.2.2",
     "typescript": "3.8.3"
   },
   "scripts": {

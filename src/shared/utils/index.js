@@ -1,12 +1,5 @@
-import createActions from './actionCreator';
-
-
-
-
-
-
-
+import createActions from "./actionCreator";
 
 export default {
-    createActions
-}
+  createActions,
+};
