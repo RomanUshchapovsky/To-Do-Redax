@@ -1,4 +1,4 @@
-import { createActionConstants } from "../../../shared/utils/actionCreator";
+import { createActionConstants } from '../../../shared/utils/actionCreator';
 
 export const type = [
   "SIGN_IN", 

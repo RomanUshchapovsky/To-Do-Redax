@@ -6,8 +6,8 @@ import {
     Container,
 } from '@material-ui/core';
 
-// import { ROUTES_PATH } from "../../../../../router/constants/index";
-import useStyles from "./styles";
+import { ROUTES_PATH } from '../../../../router/constants/index';
+import useStyles from './styles';
 
 
 export default function Activation() {
@@ -34,4 +34,4 @@ export default function Activation() {
             </div>
         </Container>
     );
-}
+};

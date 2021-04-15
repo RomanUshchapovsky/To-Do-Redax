@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Redirect, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import clsx from 'clsx';
 import { useTheme } from '@material-ui/core/styles';
 import {
@@ -22,14 +22,12 @@ import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import ListAltIcon from '@material-ui/icons/ListAlt';
 import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 
-import useStyles from "./styles";
-
+import useStyles from './styles';
 
 export default function MiniDrawer() {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = useState(false);
-
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -61,20 +59,14 @@ export default function MiniDrawer() {
                     <Typography variant="h3" noWrap>
                         My Todos
                     </Typography>
-
-                    {/* login modal Button */}
-
                     <Button edge="end"
                         color="inherit"
-                        
                         to="/login"
-                    >  
+                    >
                         <Link className={classes.loginButton} to="/login">
                             Login
                         </Link>
-                        {/* <LoginModal /> */}
                     </Button>
-
                 </Toolbar>
             </AppBar>
             {/*   -------------  <Drawer ---------------------*/}
@@ -109,4 +101,4 @@ export default function MiniDrawer() {
             </Drawer>
         </div>
     );
-}
+};

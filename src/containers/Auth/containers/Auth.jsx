@@ -1,13 +1,12 @@
-import React from "react";
-import useStyles from "./styles";
-import { CssBaseline, Paper } from "@material-ui/core";
+import React from 'react';
+import useStyles from './styles';
+import { CssBaseline, Paper } from '@material-ui/core';
 
-
-import SignIn from "../components/SignIn/SignIn";
-import SignUp from "../components/Activation/Activation";
-import ResetPassword from "../components/ResetPassword/ResetPassword";
-import ForgotPassword from "../components/ForgotPassword/ForgotPassword";
-import Activation from "../components/SignIn/SignIn";
+import SignIn from '../components/SignIn/SignIn';
+import SignUp from '../components/Activation/Activation';
+import ResetPassword from '../components/ResetPassword/ResetPassword';
+import ForgotPassword from '../components/ForgotPassword/ForgotPassword';
+import Activation from '../components/SignIn/SignIn';
 
 
 const Auth = () => {

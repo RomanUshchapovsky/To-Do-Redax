@@ -30,9 +30,3 @@ const App = (history) => {
 };
 
 export default App;
-
-
-/* <ConnectedRouter history={history} noInitialPop>
-  <Route path="/Main" component={Main} exact={true} />
-</ConnectedRouter> */
-

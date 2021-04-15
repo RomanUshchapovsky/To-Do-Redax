@@ -6,7 +6,6 @@ const useStyles = makeStyles((theme) => ({
   },
   addToDoButton: {
     top: 110,
-    left: 10,
     marginRight: 20,
     backgroundColor: "rgb(0, 247, 255)",
   },
