@@ -1,3 +1,3 @@
-const defaultActionTypes = ["SUCCESS", "FAILURE", "REQUEST", "CLEAR", "SIGN_IN", "SIGN_UP", "RESET", "FORGOT", "ACTIVATION"];
+const defaultActionTypes = ["SUCCESS", "FAILURE", "REQUEST", "CLEAR"];
 
 export default defaultActionTypes;

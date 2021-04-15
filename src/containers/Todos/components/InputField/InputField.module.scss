@@ -1,0 +1,19 @@
+// @import "../../../styles/index.scss";
+@import "../../../../styles/index.scss";
+
+.formBlock {
+    @include centered-block(flex, column, relative, 10px, center, center);
+    background-color: white;
+    min-height: 300px;
+    min-width: 600px;
+}
+.formItem {
+    height: 40px;
+    width: 400px;
+    margin-top: 10px;
+    padding-left: 20px;
+    justify-content: center;
+    background-color:  rgba(12, 5, 10, 0.04);
+    font-size: $font-size;
+    border: none;    
+}

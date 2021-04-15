@@ -2,11 +2,11 @@ import React from "react";
 import { Route, Switch } from "react-router";
 
 const routeAssessor = (parentRoutePath, route) => {
-  const { children, component, exact, path } = route;
+  const { component, exact, path } = route;
 
   const fullPath = parentRoutePath ? `${parentRoutePath}${path}` : path;
 
-  if (!children.length) {
+  if ({component}) {
     return (
       <Route 
         key={fullPath}
@@ -17,14 +17,13 @@ const routeAssessor = (parentRoutePath, route) => {
     );
   } else {
     return (
-      <Switch key="parent">
+      <Switch >
         <Route
           key={fullPath}
           path={fullPath}
           exact={exact}
           component={component}
         />
-        {children.map((childRoute) => routeAssessor(path, childRoute))}
       </Switch>
     );
   }

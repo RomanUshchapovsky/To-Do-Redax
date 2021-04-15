@@ -10,13 +10,13 @@ import { ContextContainer } from "./Context/ContextContainer";
 
 ReactDOM.render(
   <Provider store={store}>
-    <ContextContainer>
-      <React.StrictMode>
-        <ConnectedRouter history={history}>
+    <ConnectedRouter history={history}>
+      <ContextContainer>
+        <React.StrictMode>
           <App />
-        </ConnectedRouter>
-      </React.StrictMode>
-    </ContextContainer>
-  </Provider>,
+        </React.StrictMode>
+      </ContextContainer>
+    </ConnectedRouter>
+  </Provider >,
   document.getElementById("root")
 );
