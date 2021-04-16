@@ -14,10 +14,25 @@ export function* signIn( payload, callback) {
   } finally {
     callback && typeof callback === "function" && callback();
   }
-  // yield put(push('/Main'))
+}
+export function* signUp( payload, callback) {
+
+}
+export function* reset( payload, callback) {
+
+}
+export function* forgot( payload, callback) {
+
+}
+export function* activation( payload, callback) {
+
 }
 
 
 export default function* authWatcher() {
   yield takeLatest(actionTypes.SIGN_IN.REQUEST, signIn);
+  yield takeLatest(actionTypes.SIGN_UP.REQUEST, signUp);
+  yield takeLatest(actionTypes.RESET.REQUEST, reset);
+  yield takeLatest(actionTypes.FORGOT.REQUEST, forgot);
+  yield takeLatest(actionTypes.ACTIVATION.REQUEST, activation);
 }

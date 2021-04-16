@@ -1,7 +1,7 @@
 const initialState = {
   isAuth: {},
   token: {},
-  user: {},
+  users: {},
   loading: false,
   error: null,
 };

@@ -17,7 +17,7 @@ export default (state = initialState, action) => {
         loading: false,
         todos: [...state.todos].concat(action.payload),
       };
-    case actionTypes.UPDATE_TODO.SUCCESS:
+    case actionTypes.UPDATE_TODO.SUCCESS: 
       const todoIdx = state.todos.findIndex(
         (todo) => todo.id === action.payload.id
       );

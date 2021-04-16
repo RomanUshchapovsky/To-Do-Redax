@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { push } from 'connected-react-router'
 import { Formik, Form, Field } from 'formik';
 import {
   Avatar,
@@ -103,12 +104,13 @@ export default function SignUp() {
                     variant="contained"
                     color="primary"
                     className={classes.submit}
+                    // onClick={() => dispatch(push(ROUTES_PATH.ACTIVATION))}
                   >
                     Sign Up
                   </Button>
                   <Grid container justify="flex-end">
                     <Grid item>
-                      <Link href="#" variant="body2" to="/login">
+                      <Link href="/login" variant="body2" to={ROUTES_PATH.SIGN_IN}>
                         Already have an account? Sign in
                       </Link>
                     </Grid>

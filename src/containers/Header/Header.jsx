@@ -93,7 +93,7 @@ export default function MiniDrawer() {
                     {['ToDo', 'Сalendar'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>{index % 2 === 0 ? <ListAltIcon /> : <CalendarTodayIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
+                            <Link to="/Main"><ListItemText primary={text} /></Link>
                         </ListItem>
                     ))}
                 </List>

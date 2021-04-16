@@ -5,9 +5,11 @@ export const ROUTES_PATH = {
   FORGOT: "/forgot-password",
   RESET: "/reset-password", 
   ACTIVATION: "/activation",
-};
-
-export const ROUTES_LABEL = {
   TODO: "Main",
   CALENDAR: "Сalendar",
 };
+
+// export const ROUTES_LABEL = {
+//   TODO: "Main",
+//   CALENDAR: "Сalendar",
+// };

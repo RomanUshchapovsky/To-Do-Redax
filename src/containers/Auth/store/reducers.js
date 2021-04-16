@@ -19,7 +19,7 @@ export default (state = initialState, action) => {
       return {
         ...state,
         loading: false,
-        auth: [...state.Auth],
+        auth: [...state.auth],
       };
     case actionTypes.ACTIVATION.SUCCESS:
     case actionTypes.SIGN_UP.SUCCESS:

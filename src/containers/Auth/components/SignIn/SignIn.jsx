@@ -15,7 +15,7 @@ import {
   Container,
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-
+import { push } from 'connected-react-router'
 
 import { ROUTES_PATH } from '../../../../router/constants/index';
 import useStyles from './styles';
@@ -91,19 +91,18 @@ export default function SignIn(data) {
                     variant="contained"
                     color="primary"
                     className={classes.submit}
+                    onClick={() => dispatch(push(ROUTES_PATH.TODO))}
                   >
                     Sign In
                   </Button>
                   <Grid container>
                     <Grid item xs>
-                      {/* <Link href="#" variant="body2" to={ROUTES_PATH.FORGOT}> */}
-                      <Link href="#" variant="body2" to="/forgot-password">
+                    <Link href="#" variant="body2" to={ROUTES_PATH.FORGOT}>
                         Forgot password?
                       </Link>
                     </Grid>
                     <Grid item>
-                      {/* <Link href="#" variant="body2" to={ROUTES_PATH.SIGN_UP}> */}
-                      <Link href="#" variant="body2" to="/registration" >
+                      <Link href="#" variant="body2" to={ROUTES_PATH.SIGN_UP}>
                         {"Don't have an account? Sign Up"}
                       </Link>
                     </Grid>
