@@ -28,6 +28,7 @@ export default function MiniDrawer() {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = useState(false);
+    
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -54,7 +55,8 @@ export default function MiniDrawer() {
                             [classes.hide]: open,
                         })}
                     >
-                        <MenuIcon />
+                    <MenuIcon />
+
                     </IconButton>
                     <Typography variant="h3" noWrap>
                         My Todos
@@ -63,8 +65,8 @@ export default function MiniDrawer() {
                         color="inherit"
                         to="/login"
                     >
-                        <Link className={classes.loginButton} to="/login">
-                            Login
+                        <Link className={classes.loginButton} to="/">
+                            Logout
                         </Link>
                     </Button>
                 </Toolbar>

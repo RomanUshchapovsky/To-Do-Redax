@@ -15,7 +15,13 @@ const useStyles = makeStyles((theme) => ({
   },
   todosListImg: {
     height: "50px",
-    width: "40px",
+    maxWidth: "60px",
+    overflow: "hidden",
+    textAlign: "center",
+  },
+  img: {
+    height: "50px",
+    objectFit: "contain",
   },
   todosListText: {
     width: "350px",

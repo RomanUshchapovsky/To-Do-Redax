@@ -16,7 +16,7 @@ export default ({ text, todo_completed_date, image_url }) => {
       </div>
       <div className={classes.todosListDate}>
         <p>{todo_completed_date}</p>
-      </div>
+      </div> 
     </Container>
   );
 };

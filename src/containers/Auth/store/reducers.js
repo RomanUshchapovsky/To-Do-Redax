@@ -14,19 +14,18 @@ export default (state = initialState, action) => {
       return { ...state, loading: true, error: null };    
     case actionTypes.ACTIVATION.REQUEST:
       return { ...state, loading: true, error: null };   
-// -----------
+// -----------------
+    case actionTypes.ACTIVATION.SUCCESS:
+    case actionTypes.SIGN_UP.SUCCESS:
+    case actionTypes.RESET.SUCCESS:
+    case actionTypes.FORGOT.SUCCESS:  
     case actionTypes.SIGN_IN.SUCCESS:
       return {
         ...state,
         loading: false,
         auth: [...state.auth],
       };
-    case actionTypes.ACTIVATION.SUCCESS:
-    case actionTypes.SIGN_UP.SUCCESS:
-    case actionTypes.RESET.SUCCESS:
-    case actionTypes.FORGOT.SUCCESS:  
-
-
+// -----------------
     case actionTypes.SIGN_IN.FAILURE:
     case actionTypes.SIGN_UP.FAILURE:
     case actionTypes.FORGOT.FAILURE:

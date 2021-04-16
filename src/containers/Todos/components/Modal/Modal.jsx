@@ -1,10 +1,10 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import classnames from "classnames";
-import { Button } from "@material-ui/core";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import classnames from 'classnames';
+import { Button } from '@material-ui/core';
 
-import useStyles from "./styles";
-import styles from "./Modal.module.scss";
+import useStyles from './styles';
+import styles from './Modal.module.scss';
 
 const Modal = ({ active, setActive, children }) => {
   const classes = useStyles();
@@ -25,5 +25,6 @@ const Modal = ({ active, setActive, children }) => {
         document.getElementById("modal-root")
       )
     : null;
-};
+}
+
 export default Modal;

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router'
-import { Link } from 'react-router-dom';
 
 // import { privateRouter, publicRouter } from './router';
 // import routeAssessor from './router/routeAssesor';
@@ -20,10 +19,9 @@ const App = (history) => {
     //   <Main>{privateRouter().map((route) => routeAssessor(null, route))}</Main> 
     // </Switch>
     <>
-    {/* <div>Hello it is To Do App! You can go to <button> <Link to="/login">Login</Link></button></div> */}
       <Switch>
         <Route path="/Main" exact={true} component={Main} />
-        <Route path="/login" exact={true} component={SignIn} />
+        <Route path="/" exact={true} component={SignIn} />
         <Route path="/registration" exact={true} component={SignUp} />
         <Route path="/forgot-password" exact={true} component={ForgotPassword} />
         <Route path="/reset-password" exact={true} component={ResetPassword} />

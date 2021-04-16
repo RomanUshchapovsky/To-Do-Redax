@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { push } from 'connected-react-router'
+// import { push } from 'connected-react-router'
 import { Formik, Form, Field } from 'formik';
 import {
   Avatar,
@@ -25,7 +25,6 @@ export default function SignUp() {
   const dispatch = useDispatch();
 
   const handleSubmit = async (data) => {
-
     // console.log("auth", data.auht.email);
     dispatch(
       actions.SIGN_UP.REQUEST(
@@ -110,7 +109,7 @@ export default function SignUp() {
                   </Button>
                   <Grid container justify="flex-end">
                     <Grid item>
-                      <Link href="/login" variant="body2" to={ROUTES_PATH.SIGN_IN}>
+                      <Link href="/" variant="body2" to={ROUTES_PATH.SIGN_IN}>
                         Already have an account? Sign in
                       </Link>
                     </Grid>

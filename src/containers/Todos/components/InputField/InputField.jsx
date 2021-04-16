@@ -22,7 +22,7 @@ export default (props) => {
   const classes = useStyles();
   const { users } = useContext(Context);
   const dispatch = useDispatch();
-  
+
   const handleSubmit = async (data, { resetForm }) => {
     if (props && props.id) {
       const { toggleField } = props;
@@ -44,7 +44,7 @@ export default (props) => {
             userId: data.user.id,
             name: data.user.name,
           },
-          () => resetForm() 
+          () => resetForm()
         )
       );
       // console.log("user", data.user.id);
@@ -76,26 +76,26 @@ export default (props) => {
                 name="todo_completed_date"
                 placeholder={FORM_HELP_TEXT.placeholder.todo_completed_date}
               />
-              {/* <Field className={classnames(styles.formItem)}
-                            type="file"
-                            name="file"
-                            placeholder={FORM_HELP_TEXT.placeholder.image_url}
-                            onChange={e => {
-                                handleChange(e)
+              <Field className={classnames(styles.formItem)}
+                type="file"
+                name="file"
+                // placeholder={FORM_HELP_TEXT.placeholder.image_url}
+                onChange={e => {
+                  handleChange(e)
 
-                                const file = e.target.files[0];
+                  const file = e.target.files[0];
 
-                                if (file) {
-                                    const reader = new FileReader();
-                                    reader.onloadend = () => {
-                                        setFieldValue("image_url", reader.result, false);
-                                    };
-                                    reader.readAsDataURL(file);
-                                } else {
-                                    // TODO
-                                }
-                            }}
-                        /> */}
+                  if (file) {
+                  const reader = new FileReader();
+                  reader.onloadend = () => {
+                  setFieldValue("image_url", reader.result, false);
+                  };
+                  reader.readAsDataURL(file);
+                  } else {
+                      // TODO
+                  }
+                }}
+              />
               <FormControl className={classes.formControl}>
                 <InputLabel id="demo-simple-select-label">Name</InputLabel>
                 <Select

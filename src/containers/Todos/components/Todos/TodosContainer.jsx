@@ -1,11 +1,11 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { Button, Container, Grid } from "@material-ui/core";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { Button, Container, Grid } from '@material-ui/core';
 
-import useStyles from "./styles";
-import Todo from "./Todo";
-import { actions } from "../../store/actions";
-import InputField from "../InputField/InputField";
+import useStyles from './styles';
+import Todo from './Todo';
+import { actions } from '../../store/actions';
+import InputField from '../InputField/InputField';
 
 const TodosContainer = (props) => {
   const classes = useStyles();

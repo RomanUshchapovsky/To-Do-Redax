@@ -9,13 +9,11 @@ import {
   TextField,
   FormControlLabel,
   Checkbox,
-  // Link,
   Grid,
   Typography,
   Container,
 } from '@material-ui/core';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import { push } from 'connected-react-router'
 
 import { ROUTES_PATH } from '../../../../router/constants/index';
 import useStyles from './styles';
@@ -26,9 +24,17 @@ export default function SignIn(data) {
   const classes = useStyles();
   const dispatch = useDispatch();
 
+
+  const submitForm = () => {
+    // if (email === "" || password === "") {
+    //   setError("Fields are required");
+    //   return;
+    // }
+    // props.login({ email, password });
+  };
+
   const handleSubmit = async (data) => {
 
-    console.log("auth", data.auht.email);
     dispatch(
       actions.SIGN_IN.REQUEST(
         {
@@ -85,19 +91,22 @@ export default function SignIn(data) {
                     control={<Checkbox value="remember" color="primary" />}
                     label="Remember me"
                   />
+
                   <Button
                     type="submit"
                     fullWidth
                     variant="contained"
                     color="primary"
                     className={classes.submit}
-                    onClick={() => dispatch(push(ROUTES_PATH.TODO))}
+                    component={ Link } to={ROUTES_PATH.ACTIVATION}
+                    onClick={submitForm}
+                    // onClick={() => dispatch(push(ROUTES_PATH.ACTIVATION))}
                   >
                     Sign In
                   </Button>
                   <Grid container>
                     <Grid item xs>
-                    <Link href="#" variant="body2" to={ROUTES_PATH.FORGOT}>
+                      <Link href="#" variant="body2" to={ROUTES_PATH.FORGOT}>
                         Forgot password?
                       </Link>
                     </Grid>
