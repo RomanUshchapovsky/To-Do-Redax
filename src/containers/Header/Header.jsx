@@ -24,11 +24,12 @@ import CalendarTodayIcon from '@material-ui/icons/CalendarToday';
 
 import useStyles from './styles';
 
+
 export default function MiniDrawer() {
     const classes = useStyles();
     const theme = useTheme();
     const [open, setOpen] = useState(false);
-    
+
     const handleDrawerOpen = () => {
         setOpen(true);
     };
@@ -55,7 +56,7 @@ export default function MiniDrawer() {
                             [classes.hide]: open,
                         })}
                     >
-                    <MenuIcon />
+                        <MenuIcon />
 
                     </IconButton>
                     <Typography variant="h3" noWrap>
@@ -92,12 +93,20 @@ export default function MiniDrawer() {
                 </div>
                 <Divider />
                 <List>
-                    {['ToDo', 'Сalendar'].map((text, index) => (
+                    {/* {['ToDo', 'Сalendar'].map((text, index) => (
                         <ListItem button key={text}>
                             <ListItemIcon>{index % 2 === 0 ? <ListAltIcon /> : <CalendarTodayIcon />}</ListItemIcon>
                             <Link to="/Main"><ListItemText primary={text} /></Link>
                         </ListItem>
-                    ))}
+                    ))} */}
+                    <ListItem button >
+                        <ListItemIcon> <ListAltIcon />  </ListItemIcon>
+                        <Link to="/Main"><ListItemText primary /> ToDo </Link>
+                    </ListItem>
+                    <ListItem button >
+                        <ListItemIcon> <CalendarTodayIcon />  </ListItemIcon>
+                        <Link to="/converter"><ListItemText primary /> Data from Excel </Link>
+                    </ListItem>
                 </List>
                 <Divider />
             </Drawer>

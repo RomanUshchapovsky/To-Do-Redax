@@ -6,10 +6,5 @@ export const ROUTES_PATH = {
   RESET: "/reset-password", 
   ACTIVATION: "/activation",
   TODO: "Main",
-  CALENDAR: "Сalendar",
+  CONVERTER: "/converter",
 };
-
-// export const ROUTES_LABEL = {
-//   TODO: "Main",
-//   CALENDAR: "Сalendar",
-// };

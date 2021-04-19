@@ -22,10 +22,9 @@ export const privateRouter = () =>
       icon: <ListAltIcon />,
     },
     {
-      path: ROUTES_PATH.CALENDAR,
+      path: ROUTES_PATH.CONVERTER,
       exact: true,
-      component: () => <div>CALENDAR</div>,
-      label: ROUTES_LABEL.CALENDAR, 
+      component: Converter,
       icon: <CalendarTodayIcon />,
     },
   ]
